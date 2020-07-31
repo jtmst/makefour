@@ -2,7 +2,7 @@ class Board {
     constructor() {
         this.rows = 6;
         this.columns = 7;
-        this.spaced = this.createSpaces();
+        this.spaces = this.createSpaces();
     }
 /**
  * Generates a 2D array of spaces
@@ -22,4 +22,11 @@ class Board {
       }
       return spaces;
     }
+	drawHTMLBoard() {
+        for (let column of this.spaces) {
+            for (let space of column) {
+                space.drawSVGSpace();
+            }
+        }
+	} 
 }
